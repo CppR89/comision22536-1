@@ -1,1 +1,1 @@
-// Esto es un comentario
+// Clase Javascript 1
