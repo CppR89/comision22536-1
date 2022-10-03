@@ -1,5 +1,5 @@
 function Saludar (){
-    return "Hola a todos";
+    return "Hola a todos los presentes";
 }
 
 
