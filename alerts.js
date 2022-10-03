@@ -5,7 +5,7 @@
 // alert('Hola Mundo');
 let edad = prompt('¿Cuál es tu edad?');
 // console.log(typeof(edad));
-if( parseInt(edad) === 30){
+if( parseInt(edad) === 35){
     alert('Tiene 30 años', edad);
 }
 else{
