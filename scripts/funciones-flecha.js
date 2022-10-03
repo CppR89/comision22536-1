@@ -1,8 +1,10 @@
 function Saludar (){
-    return "Hola a todos";
+    return "Hola Comision 22356";
 }
 
+console.log("Hola Probando");
 
+Saludar();
 
 
 
