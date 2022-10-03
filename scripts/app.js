@@ -92,7 +92,6 @@ const saludo =  c + d;
 var altura = 0;
 var edad = 0;
 let nombre = "Pedro";
-nombre.trimEnd
 altura = parseFloat(prompt("Ingrese la altura").replace(',','.'));
 edad = parseInt(prompt("Ingrese la edad"));
 if (altura > 1.30 && edad > 14) {
