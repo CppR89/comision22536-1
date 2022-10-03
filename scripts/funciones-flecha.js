@@ -1,5 +1,5 @@
 function Saludar (){
-    return "Hola Comision 22356";
+    return "Hola a todos los presentes";
 }
 
 console.log("Hola Probando");
