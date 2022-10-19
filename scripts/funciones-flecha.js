@@ -1,20 +1,33 @@
-function Saludar (){
-    return "Hola a todos";
+// function Saludar (){
+//     return "Hola a todos";
+// }
+
+// Saludar();
+
+// let saludarFlecha = () =>{
+//     return "Hola a todos desde funcion Flecha";
+// }
+// console.log(saludarFlecha);
+
+// let saludarConParametros = (parametro1) =>{
+//     return 'Hola ' + parametro1;
+// }
+
+// console.log(saludarConParametros("Comision 22536"));
+
+
+function saludar(nombre) {
+    alert('Hola ' + nombre)
 }
 
-Saludar();
-
-let saludarFlecha = () =>{
-    return "Hola a todos desde funcion Flecha";
+function procesarEntradaUsuario() {
+    var nombre = prompt('Por favor ingresa tu nombre.')
+    saludar(nombre);
 }
-console.log(saludarFlecha);
+procesarEntradaUsuario()
+// saludar(nombre);
 
-let saludarConParametros = (parametro1) =>{
-    return 'Hola ' + parametro1;
-}
-
-console.log(saludarConParametros("Comision 22536"));
-
+// procesarEntradaUsuario(saludar)
 
 
 //--------------REPASO GIT-----------------

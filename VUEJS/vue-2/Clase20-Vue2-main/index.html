@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Vue.js</title>
+
+    <!-- Mi hoja de estilos externa -->
+    <!-- <link rel="stylesheet" href="/estilos.css"> -->
+
+    <!--CDN de Vue, version de desarrollo -->
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{mensaje}}</h1>
+        <div>
+            <input type="text" v-model="agregarElemento" @keyUp.enter="agregarElementos">
+            <button @click="agregarElementos">Agregar</button>
+        </div>
+        <li v-for="elem of lista">
+            {{elem.nombre}}
+            {{elem.cantidad}}
+            <div>
+                <button @click="elem.cantidad++">+</button>
+                <button v-if="elem.cantidad >0" @click="elem.cantidad--">-</button>
+            </div>
+        </li>
+        <span v-if="!lista.length"> No hay elementos en la lista</span>
+        <span v-else>  hay elementos en la lista</span>
+        <p>Total de elementos: <b>{{sumarElementos}}</b></p>
+        <button @click="reset"> RESET </button>
+    </div>
+    <script>
+        let miApp = Vue.createApp({
+            data() {
+                return {
+                    //     lista:[ {nombre:'Azucar', cantidad: 1},
+                    //     {nombre:'Leche', cantidad: 3},
+                    //  ],
+                    lista: [],
+                    agregarElemento: "",
+
+                    mensaje: "Agregar a la lista"
+                }
+            },
+            methods: {
+                agregarElementos() {
+                    if (this.agregarElemento !== "") {
+
+                        this.lista.push({
+                            nombre: this.agregarElemento,
+                            cantidad: 1
+                        });
+
+                        this.agregarElemento = "";
+                        // return false
+                    }
+                    else {
+                        alert("Ingreso Nulo");
+                    }
+                },
+                reset() {
+                    this.lista = [];
+                },
+                hayElemento() {
+                    if (this.totalElementos > 0)
+                        return true
+                    return false;
+                }
+            },
+            computed: {
+                sumarElementos() {
+                    this.totalElementos = 0;
+                    for (elem of this.lista) {
+                        this.totalElementos += elem.cantidad;
+                    }
+                    return this.totalElementos;
+                }
+
+            }
+        }).mount("#app")
+    </script>
+</body>
+
+</html>

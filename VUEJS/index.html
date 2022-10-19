@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Vue.js</title>
+    <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Mi hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div id="app">
+       <h1> {{ message }}</h1>
+       <h3 v-show="admin"> {{ comision }}</h3>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum cupiditate ipsum asperiores, numquam <span v-text="desarrollador"></span> delectus porro voluptates eos.</p>
+       <div v-html="message"></div>
+       {{message}}
+       <span v-once>Mensaje: {{ message }}</span>
+    </div>
+    <div id="app-2">
+        <span v-if="admin" v-bind:title="message">
+          Mueva el mouse sobre mí durante unos segundos
+          para ver mi título enlazado dinámicamente.
+        </span>
+        <span v-else>Mostrar texto</span>
+        
+        
+      </div>
+      <div id="forApp">
+        <ul v-for="x in marcas">
+            <li>{{x}}</li>
+        </ul>
+        <p>{{ mensaje }}</p>
+
+        <button v-on:click="counter += 1">Agregar 1</button>
+<span> Clics: {{ counter }}</span>
+<button v-if="counter > 0"  v-on:click="counter -= 1">Quitar 1</button>
+<p><input v-model="mensaje"></p>
+</div>
+      </div>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                message: "<h3>Hola Codo a codo! <mark>Buenas noches</mark></h3>",
+                comision: "Comision 22536",
+                admin: false,
+                desarrollador: "Pedro Picapiedra"
+            }
+        })
+        let app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'Usted cargó esta página el ' + new Date().toLocaleString(),
+    admin: true,
+
+  }
+})
+let forApp = new Vue({
+    el: '#forApp',
+    data:{
+        mensaje: 'Placeholder',
+        counter: 0,
+        marcas: ['Chevrolet', 'Torino', 'Dodge', 'Ford', 'BMW', 'Ferrari']
+    }
+})
+    </script>
+
+</body>
+
+</html>
